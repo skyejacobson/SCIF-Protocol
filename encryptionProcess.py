@@ -27,10 +27,24 @@ os.system('exit')'''
 
 
 
+
 # Start of updated program
 
 import os
+from file_traverse import printer
 import file_traverse
+
+class ENCfile:
+    def __init__(subfile):
+        subfile = fileName
+
+    def idFILE():
+        file_traverse
+        fileName = file_traverse(__file__)
+        print(fileName)
+
+    idFILE()
+
 
 
 print(file_traverse)
