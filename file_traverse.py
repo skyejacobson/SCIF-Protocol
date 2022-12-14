@@ -2,22 +2,17 @@ import os
 
 def userdirectory():
     while True:
-        global usr_direc
         usr_direc = input('Please enter a directory that you would like to search in. \nFor example: /Users/'
                           'bob/Desktop/\n')
 
-        findDir = os.system('cd /;''find ' + usr_direc)
-        try:
-            os.system(findDir)
-        except TypeError:
-            pass
-        os.system(findDir)
-        if os.system(findDir) == TypeError:
+        findDir = 'cd /;''find ' + usr_direc
+        if os.system(findDir) == os.error:
             print('Incorrect or unknown directory. Please try again.')
-            TypeError = False
+        else:
+            break; return usr_direc
+
             
-    else:
-        return usr_direc
+    
 
 def what_file():
     usr_exten = input('Please enter what file types would you like to search for.\n')
