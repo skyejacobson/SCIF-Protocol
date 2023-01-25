@@ -5,14 +5,10 @@ def userdirectory():
         usr_direc = input('Please enter a directory that you would like to search in. \nFor example: /Users/'
                           'bob/Desktop/\n')
 
-        findDir = 'cd /;''find ' + usr_direc
-        if os.system(findDir) == os.error:
-            print('Incorrect or unknown directory. Please try again.')
+        if os.path.exists(usr_direc):
+            return usr_direc
         else:
-            break; return usr_direc
-
-            
-    
+            print('Incorrect or unknown directory. Please try again.')
 
 def what_file():
     usr_exten = input('Please enter what file types would you like to search for.\n')
@@ -35,12 +31,3 @@ def printer(usr_direc, usr_exten):
                     /  ' the program and try again')
 
 printer(userdirectory(), what_file())
-
-
-# Try to avoid os.walk
-# Use CD and LS type commands to run through directories.
-
-
-
-# def userdirectory():
- #   usr_direc = input('Please enter a starting area that you would like to search in.')
